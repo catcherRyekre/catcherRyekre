@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:ns0="https://catcherRye.github.io/catcherRye.owl#">
+
+  <owl:Ontology rdf:about="https://catcherRye.github.io/catcherRye.owl">
+    <owl:versionInfo>1.1</owl:versionInfo>
+    <rdfs:comment>An ontology for representing expressions of place in the context of 'Catcher in the Rye'</rdfs:comment>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace">
+    <rdfs:label>Expression of Place</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate location or spatial relationships.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#GeographicExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#CityExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#BuildingExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#RoomExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContainerExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#DirectionalExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#AbsoluteLocationExpressions"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasTimeUnit">
+    <rdfs:label>has time unit</rdfs:label>
+    <rdfs:comment>A time unit associated with the expression of place.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasTimeValue">
+    <rdfs:label>has time value</rdfs:label>
+    <rdfs:comment>A numeric value associated with the time unit.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#GeographicExpressions">
+    <rdfs:label>Geographic Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that refer to geographic locations.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#CityExpressions">
+    <rdfs:label>City Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that refer to cities.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#isLocatedInCountry">
+    <rdfs:label>is located in country</rdfs:label>
+    <rdfs:comment>Indicates the country in which the city is located.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#CityExpressions"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#GeographicExpressions"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#isLocatedInState">
+    <rdfs:label>is located in state</rdfs:label>
+    <rdfs:comment>Indicates the state in which the city is located, if applicable.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#CityExpressions"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#GeographicExpressions"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasPopulation">
+    <rdfs:label>has population</rdfs:label>
+    <rdfs:comment>Indicates the population of the city.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#CityExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#BuildingExpressions">
+    <rdfs:label>Building Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that refer to buildings or structures.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#isLocatedInCity">
+    <rdfs:label>is located in city</rdfs:label>
+    <rdfs:comment>Indicates the city in which the building is located.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#BuildingExpressions"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#CityExpressions"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasAddress">
+    <rdfs:label>has address</rdfs:label>
+    <rdfs:label>hasAddress</rdfs:label>
+    <rdfs:comment>Indicates the address of the building.</rdfs:comment>
+    <rdfs:comment>Indicates the street address of the location.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#BuildingExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasFunction">
+    <rdfs:label>has function</rdfs:label>
+    <rdfs:comment>Indicates the function of the building, e.g., commercial, residential, educational, etc.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#BuildingExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#RoomExpressions">
+    <rdfs:label>Room Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that refer to rooms or spaces within buildings.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#isPartOfBuilding">
+    <rdfs:label>is part of building</rdfs:label>
+    <rdfs:comment>Indicates the building in which the room is located.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#RoomExpressions"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#BuildingExpressions"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasSize">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>has size</rdfs:label>
+    <rdfs:label>hasSize</rdfs:label>
+    <rdfs:comment>Indicates the size of the room.</rdfs:comment>
+    <rdfs:comment>Indicates the size associated with an adjective.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#RoomExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ContainerExpressions">
+    <rdfs:label>Container Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that refer to containers or enclosed spaces.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#isContainedIn">
+    <rdfs:label>is contained in</rdfs:label>
+    <rdfs:comment>Indicates the larger container or space in which the container is located.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContainerExpressions"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#contains">
+    <rdfs:label>contains</rdfs:label>
+    <rdfs:comment>Indicates the objects, people, etc., that the container holds.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContainerExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#DirectionalExpressions">
+    <rdfs:label>Directional Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate directions or spatial orientations.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasBearing">
+    <rdfs:label>has bearing</rdfs:label>
+    <rdfs:comment>Indicates the cardinal direction or orientation relative to another object.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#DirectionalExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasDistance">
+    <rdfs:label>has distance</rdfs:label>
+    <rdfs:comment>Indicates the distance between two objects, if applicable.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#DirectionalExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions">
+    <rdfs:label>Relative Location Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate a location relative to another location or object.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#isRelativeTo">
+    <rdfs:label>is relative to</rdfs:label>
+    <rdfs:comment>Indicates the object or location relative to which the position is expressed.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasSpatialRelationship">
+    <rdfs:label>has spatial relationship</rdfs:label>
+    <rdfs:comment>Indicates the type of spatial relationship between the objects, e.g., above, below, inside, outside, etc.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ExpressionOfTime">
+    <rdfs:label>Expression of Time</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate time or temporal relationships.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasTemporalRelationship">
+    <rdfs:label>has temporal relationship</rdfs:label>
+    <rdfs:comment>Indicates the type of temporal relationship, e.g., before, after, during, etc.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfTime"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasDuration">
+    <rdfs:label>has duration</rdfs:label>
+    <rdfs:comment>Indicates the duration of time, if applicable.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfTime"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#MomentExpressions">
+    <rdfs:label>Moment Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate a specific moment in time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfTime"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#DurationExpressions">
+    <rdfs:label>Duration Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate a duration of time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfTime"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#RecurringExpressions">
+    <rdfs:label>Recurring Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate a recurring event or time period.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfTime"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#MovementVerbs">
+    <rdfs:label>Movement Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement or travel.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Verbs"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasDestination">
+    <rdfs:label>has destination</rdfs:label>
+    <rdfs:comment>Indicates the destination of the movement.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#MovementVerbs"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasOrigin">
+    <rdfs:label>has origin</rdfs:label>
+    <rdfs:label>hasOrigin</rdfs:label>
+    <rdfs:comment>Indicates the origin of the movement.</rdfs:comment>
+    <rdfs:comment>Indicates the origin associated with an adjective.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#MovementVerbs"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasMeansOfTransportation">
+    <rdfs:label>has means of transportation</rdfs:label>
+    <rdfs:comment>Indicates the means of transportation used for the movement.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#MovementVerbs"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs">
+    <rdfs:label>Transitive Movement Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement or travel from one place to another, with a direct object.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#MovementVerbs"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#IntransitiveMovementVerbs">
+    <rdfs:label>Intransitive Movement Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement or travel without a direct object.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#MovementVerbs"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#BringVerbs">
+    <rdfs:label>Bring Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement involving carrying or transporting something from one place to another.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#TakeVerbs">
+    <rdfs:label>Take Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement involving removing or extracting something from one place to another.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#GoVerbs">
+    <rdfs:label>Go Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement or travel away from a place without a direct object.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#IntransitiveMovementVerbs"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ComeVerbs">
+    <rdfs:label>Come Verbs</rdfs:label>
+    <rdfs:comment>Verbs that indicate movement or travel toward a place without a direct object.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#IntransitiveMovementVerbs"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasDirectObject">
+    <rdfs:label>has direct object</rdfs:label>
+    <rdfs:comment>Indicates the direct object of the verb.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#AbsoluteLocationExpressions">
+    <rdfs:label>Absolute Location Expressions</rdfs:label>
+    <rdfs:comment>Terms and expressions that indicate a specific and precise location without reference to other objects or locations.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExpressionOfPlace"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasLatitude">
+    <rdfs:label>hasLatitude</rdfs:label>
+    <rdfs:comment>Indicates the latitude of the location.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasLongitude">
+    <rdfs:label>hasLongitude</rdfs:label>
+    <rdfs:comment>Indicates the longitude of the location.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasAltitude">
+    <rdfs:label>hasAltitude</rdfs:label>
+    <rdfs:comment>Indicates the altitude of the location.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:DatatypeProperty>
+
+  <owl:NamedIndividual rdf:about="https://catcherRye.github.io/catcherRye.owl#ToLexington">
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#AbsoluteLocationExpressions"/>
+    <rdfs:label>To Lexington</rdfs:label>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://catcherRye.github.io/catcherRye.owl#OverEast">
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#AbsoluteLocationExpressions"/>
+    <rdfs:label>Over East</rdfs:label>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:NamedIndividual>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Adjectives">
+    <rdfs:label>Adjectives</rdfs:label>
+    <rdfs:comment>Words that describe or modify nouns, expressing characteristics, qualities, or quantities.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#GrammaticalClasses"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasQuantity">
+    <rdfs:label>hasQuantity</rdfs:label>
+    <rdfs:comment>Indicates the quantity associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasQuality">
+    <rdfs:label>hasQuality</rdfs:label>
+    <rdfs:comment>Indicates the quality associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasOpinion">
+    <rdfs:label>hasOpinion</rdfs:label>
+    <rdfs:comment>Indicates the opinion associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasAge">
+    <rdfs:label>hasAge</rdfs:label>
+    <rdfs:comment>Indicates the age associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasShape">
+    <rdfs:label>hasShape</rdfs:label>
+    <rdfs:comment>Indicates the shape associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasColor">
+    <rdfs:label>hasColor</rdfs:label>
+    <rdfs:comment>Indicates the color associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasMaterial">
+    <rdfs:label>hasMaterial</rdfs:label>
+    <rdfs:comment>Indicates the material associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasIntensity">
+    <rdfs:label>hasIntensity</rdfs:label>
+    <rdfs:comment>Indicates the intensity associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasSpatialRelation">
+    <rdfs:label>hasSpatialRelation</rdfs:label>
+    <rdfs:comment>Indicates the spatial relation associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasManner">
+    <rdfs:label>hasManner</rdfs:label>
+    <rdfs:comment>Indicates the manner associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasComparison">
+    <rdfs:label>hasComparison</rdfs:label>
+    <rdfs:comment>Indicates the comparison associated with an adjective.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasOtherProperty">
+    <rdfs:label>hasOtherProperty</rdfs:label>
+    <rdfs:comment>Indicates other properties associated with an adjective that do not fit into other defined properties.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#QuantityAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Quantity Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that express the amount or number of something.</rdfs:comment>
+    <rdfs:comment>Adjectives that describe the number or amount of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#QualityAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Quality Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the characteristics or properties of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#OpinionAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Opinion Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that express personal views or beliefs about something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#SizeAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Size Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that indicate the dimensions or extent of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#AgeAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Age Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the age or period of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ShapeAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Shape Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the form or configuration of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ColorAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Color Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the color or hue of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#MaterialAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Material Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the composition or substance of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#OriginAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Origin Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the source or provenance of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#IntensityAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Intensity Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that express the degree or extent of a quality.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#LocationAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Location Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the spatial position or arrangement of something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#MannerAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Manner Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that describe the way in which an action is performed.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ComparativeAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Comparative Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that compare the qualities of two or more entities.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#MiscellaneousAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Miscellaneous Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that do not fit into the other subclasses or that fit into multiple classes depending on context.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#OtherAdjectives">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Adjectives"/>
+    <rdfs:label>Other Adjectives</rdfs:label>
+    <rdfs:comment>Adjectives that do not fit into the other subclasses, or that fit into multiple classes depending on context.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ObjectComplement">
+    <rdfs:label>Object Complement</rdfs:label>
+    <rdfs:comment>Words, phrases, or clauses that provide additional information about the direct object in a sentence, often describing or characterizing it.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#GrammaticalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#PersonObjectComplements">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ObjectComplement"/>
+    <rdfs:label>Person Object Complements</rdfs:label>
+    <rdfs:comment>Object complements that refer to people.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ObjectComplement"/>
+    <rdfs:label>Thing Object Complements</rdfs:label>
+    <rdfs:comment>Object complements that refer to things or ideas.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#PhysicalNeeds">
+    <rdfs:label>Physical Needs</rdfs:label>
+    <rdfs:comment>Terms and expressions related to the basic bodily requirements for human functioning and well-being.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#BodyRelated"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Sleep">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#PhysicalNeeds"/>
+    <rdfs:label>Sleep</rdfs:label>
+    <rdfs:comment>Terms and expressions related to sleep and rest.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Nutrition">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#PhysicalNeeds"/>
+    <rdfs:label>Nutrition</rdfs:label>
+    <rdfs:comment>Terms and expressions related to food, drink, and sustenance.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#PhysicalStates">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#PhysicalNeeds"/>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#BodyRelated"/>
+    <rdfs:label>Physical States</rdfs:label>
+    <rdfs:comment>Terms and expressions related to the physical conditions or sensations experienced by a person.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#StaticVerbs">
+    <rdfs:label>Static Verbs</rdfs:label>
+    <rdfs:comment>Verbs that express a state or condition rather than an action or event.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Verbs"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#CognitiveVerbs">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#StaticVerbs"/>
+    <rdfs:label>Cognitive Verbs</rdfs:label>
+    <rdfs:comment>Verbs that express mental processes, such as thinking, knowing, or understanding.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#PositionalVerbs">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#StaticVerbs"/>
+    <rdfs:label>Positional Verbs</rdfs:label>
+    <rdfs:comment>Verbs that describe the position or state of a person or thing without implying any action.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#DesireVerbs">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#StaticVerbs"/>
+    <rdfs:label>Desire Verbs</rdfs:label>
+    <rdfs:comment>Verbs that express a feeling of wanting or wishing for something.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Slang">
+    <rdfs:label>Slang</rdfs:label>
+    <rdfs:comment>Informal words or expressions that are more suitable for use in casual conversation than in formal speech or writing.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#InformalExpressions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Slang"/>
+    <rdfs:label>Informal Expressions</rdfs:label>
+    <rdfs:comment>Casual expressions or phrases that are typically used in informal speech or writing.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Colloquialisms">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Slang"/>
+    <rdfs:label>Colloquialisms</rdfs:label>
+    <rdfs:comment>Words or phrases that are characteristic of or appropriate to familiar, informal speech or writing.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#MildProfanities">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Slang"/>
+    <rdfs:label>Mild Profanities</rdfs:label>
+    <rdfs:comment>Words or expressions that are considered offensive or impolite but are less severe than strong profanities.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.githubio/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Materialism">
+    <rdfs:label>Materialism</rdfs:label>
+    <rdfs:comment>Words and expressions related to the importance of material possessions, money, and consumerism.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#FinancialTerms">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Materialism"/>
+    <rdfs:label>Financial Terms</rdfs:label>
+    <rdfs:comment>Words and expressions related to money, financial transactions, and economic activities.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ConsumerismTerms">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#Materialism"/>
+    <rdfs:label>Consumerism Terms</rdfs:label>
+    <rdfs:comment>Words and expressions related to the acquisition and consumption of goods and services.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ProperNames">
+    <rdfs:label>Proper Names</rdfs:label>
+    <rdfs:comment>Words and expressions referring to specific individuals, organizations, or entities.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#GrammaticalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#PersonalNames">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ProperNames"/>
+    <rdfs:label>Personal Names</rdfs:label>
+    <rdfs:comment>Words and expressions referring to specific individuals.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#OrganizationNames">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ProperNames"/>
+    <rdfs:label>Organization Names</rdfs:label>
+    <rdfs:comment>Words and expressions referring to specific organizations or institutions.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#CulturalReferences">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ProperNames"/>
+    <rdfs:label>Cultural References</rdfs:label>
+    <rdfs:comment>Words and expressions referring to specific cultural, historical, or artistic entities.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#NegativeConnotations">
+    <rdfs:label>Negative Connotations</rdfs:label>
+    <rdfs:comment>Words and expressions with negative meanings or associations, often relating to negative feelings, experiences, or physical states.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#NegativeEmotions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeConnotations"/>
+    <rdfs:label>Negative Emotions</rdfs:label>
+    <rdfs:comment>Words and expressions relating to negative feelings or emotional states.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#NegativeExperiences">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeConnotations"/>
+    <rdfs:label>Negative Experiences</rdfs:label>
+    <rdfs:comment>Words and expressions relating to negative events, situations, or actions.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#NegativePhysicalStates">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeConnotations"/>
+    <rdfs:label>Negative Physical States</rdfs:label>
+    <rdfs:comment>Words and expressions relating to negative physical conditions or health issues.</rdfs:comment>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasEntityType">
+    <rdfs:label>hasEntityType</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#PersonalNames"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#EntityType"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasNameOrigin">
+    <rdfs:label>hasNameOrigin</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#PersonalNames"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#NameOrigin"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasOrganizationType">
+    <rdfs:label>hasOrganizationType</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#OrganizationNames"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#OrganizationType"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasOrganizationIndustry">
+    <rdfs:label>hasOrganizationIndustry</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#OrganizationNames"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#OrganizationIndustry"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasReferenceType">
+    <rdfs:label>hasReferenceType</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#CulturalReferences"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#ReferenceType"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasReferenceOrigin">
+    <rdfs:label>hasReferenceOrigin</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#CulturalReferences"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#ReferenceOrigin"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasEmotionType">
+    <rdfs:label>hasEmotionType</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeEmotions"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#EmotionType"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasExperienceType">
+    <rdfs:label>hasExperienceType</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeExperiences"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExperienceType"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasExperienceDomain">
+    <rdfs:label>hasExperienceDomain</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeExperiences"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#ExperienceDomain"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasPhysicalStateType">
+    <rdfs:label>hasPhysicalStateType</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativePhysicalStates"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#PhysicalStateType"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://catcherRye.github.io/catcherRye.owl#hasPhysicalStateSeverity">
+    <rdfs:label>hasPhysicalStateSeverity</rdfs:label>
+    <rdfs:domain rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativePhysicalStates"/>
+    <rdfs:range rdf:resource="https://catcherRye.github.io/catcherRye.owl#PhysicalStateSeverity"/>
+    <foaf:isDefinedBy rdf:resource="https://catcherRye.github.io/catcherRye.owl"/>
+    <foaf:term_status>stable</foaf:term_status>
+  </owl:ObjectProperty>
+
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Phoebe">
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#PersonalNames"/>
+    <ns0:hasEntityType>Individual</ns0:hasEntityType>
+    <ns0:hasNameOrigin>Unknown</ns0:hasNameOrigin>
+  </rdf:Description>
+
+  <ns0:OrganizationNames rdf:about="https://catcherRye.github.io/catcherRye.owl#Pencey">
+    <ns0:hasOrganizationType>Educational Institution</ns0:hasOrganizationType>
+    <ns0:hasOrganizationIndustry>Education</ns0:hasOrganizationIndustry>
+  </ns0:OrganizationNames>
+
+  <ns0:CulturalReferences rdf:about="https://catcherRye.github.io/catcherRye.owl#SantaClauses">
+    <ns0:hasReferenceType>Mythological Character</ns0:hasReferenceType>
+    <ns0:hasReferenceOrigin>Global</ns0:hasReferenceOrigin>
+  </ns0:CulturalReferences>
+
+  <ns0:NegativeEmotions rdf:about="https://catcherRye.github.io/catcherRye.owl#crazy">
+    <ns0:hasEmotionType>Mental Health</ns0:hasEmotionType>
+  </ns0:NegativeEmotions>
+
+  <ns0:NegativeExperiences rdf:about="https://catcherRye.github.io/catcherRye.owl#cancer">
+    <ns0:hasExperienceType>Disease</ns0:hasExperienceType>
+    <ns0:hasExperienceDomain>Health</ns0:hasExperienceDomain>
+  </ns0:NegativeExperiences>
+
+  <ns0:NegativePhysicalStates rdf:about="https://catcherRye.github.io/catcherRye.owl#feet">
+    <ns0:hasPhysicalStateType>Discomfort</ns0:hasPhysicalStateType>
+    <ns0:hasPhysicalStateSeverity>Mild</ns0:hasPhysicalStateSeverity>
+  </ns0:NegativePhysicalStates>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ContextualClasses">
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#GrammaticalClasses">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContextualClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#Verbs">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#GrammaticalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContextualClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#BodyRelated">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#BodyParts">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#BodyRelated"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ExpressionsOfTime">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://catcherRye.github.io/catcherRye.owl#ExpressionsOfPlace">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThematicalClasses"/>
+  </owl:Class>
+
+</rdf:RDF>
