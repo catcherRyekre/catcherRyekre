@@ -336,7 +336,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Pencey">
     <catcherRye:hasOrganizationIndustry rdf:resource="https://catcherRye.github.io/catcherRye.owl#EducationIndustry"/>
-    <catcherRye:hasOrganizationType>Educational Institution</catcherRye:hasOrganizationType>
+    <catcherRye:hasOrganizationType rdf:resource="https://catcherRye.github.io/catcherRye.owl#EducationalInstitution"/>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#OrganizationNames"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Another">
@@ -736,6 +736,10 @@
     <rdfs:label>Deaf-mutes</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#Colloquialisms"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#UnknownNameOrigin">
+    <rdfs:label>Unknown</rdfs:label>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#NameOrigin"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Buy">
     <rdfs:label>Buy</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ConsumerismTerms"/>
@@ -812,10 +816,9 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContainerExpressions"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#SantaClauses">
+    <catcherRye:hasReferenceOrigin>Global</catcherRye:hasReferenceOrigin>
     <catcherRye:hasReferenceType rdf:resource="https://catcherRye.github.io/catcherRye.owl#MythologicalCharacter"/>
     <rdfs:label>Santa Clauses</rdfs:label>
-    <catcherRye:hasReferenceOrigin>Global</catcherRye:hasReferenceOrigin>
-    <catcherRye:hasReferenceType>Mythological Character</catcherRye:hasReferenceType>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#CulturalReferences"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl">
@@ -1625,10 +1628,6 @@
     <rdfs:label>Sleeve</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#EducationIndustry">
-    <rdfs:label>Education Industry</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Pass">
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
     <catcherRye:hasMovementType>pass</catcherRye:hasMovementType>
@@ -1956,6 +1955,10 @@
     <rdfs:label>depress</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeEmotions"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#BackObject">
+    <rdfs:label>back</rdfs:label>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#DirectObject"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Flitty">
     <rdfs:label>Flitty</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#Colloquialisms"/>
@@ -1969,10 +1972,10 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Phoebe">
+    <catcherRye:hasNameOrigin rdf:resource="https://catcherRye.github.io/catcherRye.owl#UnknownNameOrigin"/>
+    <catcherRye:hasEntityType rdf:resource="https://catcherRye.github.io/catcherRye.owl#Individual"/>
     <rdfs:label>Phoebe</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#CulturalReferences"/>
-    <catcherRye:hasNameOrigin>Unknown</catcherRye:hasNameOrigin>
-    <catcherRye:hasEntityType rdf:resource="https://catcherRye.github.io/catcherRye.owl#Individual"/>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#PersonalNames"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Hopeless">
@@ -2932,6 +2935,10 @@
     <rdfs:label>Food</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#EducationalInstitution">
+    <rdfs:label>Educational Institution</rdfs:label>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#OrganizationType"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Wear">
     <rdfs:label>Wear</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#DesireVerbs"/>
@@ -2945,12 +2952,11 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#Colloquialisms"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#GetBack">
-    <catcherRye:hasDirectObject>back</catcherRye:hasDirectObject>
-    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
-    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#Back"/>
+    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#BackObject"/>
     <catcherRye:hasActionType>get</catcherRye:hasActionType>
     <rdfs:label>Get back</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#RubOff">
     <catcherRye:hasMovementType>rub</catcherRye:hasMovementType>
@@ -3469,6 +3475,10 @@
     <rdfs:label>Building Expressions</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#OutObject">
+    <rdfs:label>out</rdfs:label>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#DirectObject"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#TheTwoOfThem">
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
     <rdfs:label>The two of them</rdfs:label>
@@ -3963,7 +3973,6 @@
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#crazy">
     <catcherRye:hasEmotionType rdf:resource="https://catcherRye.github.io/catcherRye.owl#MentalHealthEmotion"/>
     <rdfs:label>crazy</rdfs:label>
-    <catcherRye:hasEmotionType>Mental Health</catcherRye:hasEmotionType>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativeEmotions"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#WentThrough">
@@ -4371,12 +4380,11 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#OpinionAdjectives"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#RubOut">
-    <catcherRye:hasDirectObject>out</catcherRye:hasDirectObject>
-    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
-    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#Out"/>
+    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#OutObject"/>
     <catcherRye:hasActionType>rub</catcherRye:hasActionType>
     <rdfs:label>Rub out</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Keeps">
     <rdfs:label>Keeps</rdfs:label>
@@ -4559,13 +4567,13 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#TookOut">
-    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
-    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#Out"/>
-    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
     <catcherRye:hasDirectObject>out</catcherRye:hasDirectObject>
+    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#OutObject"/>
     <catcherRye:hasActionType>take</catcherRye:hasActionType>
     <rdfs:label>Took out</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs"/>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Smash">
     <rdfs:label>smash</rdfs:label>
@@ -5373,6 +5381,7 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#Colloquialisms"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#TakeOut">
+    <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#OutObject"/>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
     <catcherRye:hasDirectObject>out</catcherRye:hasDirectObject>
