@@ -1,5 +1,7 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:catcherRye="https://catcherRye.github.io/catcherRye.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -170,6 +172,9 @@
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Blue">
     <rdfs:label>Blue</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ColorAdjectives"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#WeekdayExpressions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#MomentExpressions"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Zoo">
     <catcherRye:hasRelativeLocationType>zoo</catcherRye:hasRelativeLocationType>
@@ -505,6 +510,9 @@
     <rdfs:label>In a cemetery</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#SeasonExpressions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#MomentExpressions"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Babe">
     <rdfs:label>Babe</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#Colloquialisms"/>
@@ -816,15 +824,20 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ContainerExpressions"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#SantaClauses">
-    <catcherRye:hasReferenceOrigin>Global</catcherRye:hasReferenceOrigin>
+    <catcherRye:hasReferenceOrigin rdf:resource="https://catcherRye.github.io/catcherRye.owl#Global"/>
     <catcherRye:hasReferenceType rdf:resource="https://catcherRye.github.io/catcherRye.owl#MythologicalCharacter"/>
     <rdfs:label>Santa Clauses</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#CulturalReferences"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl">
-    <rdfs:comment>An ontology for representing expressions of place in the context of 'Catcher in the Rye'</rdfs:comment>
-    <owl:versionInfo>1.1</owl:versionInfo>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <dct:language>en</dct:language>
+    <dct:description>An ontology representing concepts and relationships from the novel 'The Catcher in the Rye'.</dct:description>
+    <dct:creator>Juan Pablo Casado</dct:creator>
+    <dct:creator>Rayes Seif</dct:creator>
+    <dct:creator>Alessandra Trenchi</dct:creator>
+    <dct:creator>Amelia Lamargese</dct:creator>
+    <dct:title>The Catcher in the Rye</dct:title>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Hate">
     <rdfs:label>hate</rdfs:label>
@@ -2016,6 +2029,10 @@
     <rdfs:label>Unloading</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Global">
+    <rdfs:label>Global</rdfs:label>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ReferenceOrigin"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Coffee">
     <rdfs:label>Coffee</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
@@ -2468,6 +2485,9 @@
     <rdfs:label>By the door</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Quantity">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#QuantityAdjectives"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Lip">
     <rdfs:label>lip</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativePhysicalStates"/>
@@ -2599,6 +2619,9 @@
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Wondering">
     <rdfs:label>Wondering</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#CognitiveVerbs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#MealTimeExpressions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#DurationExpressions"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Vitamins">
     <rdfs:label>Vitamins</rdfs:label>
@@ -3459,6 +3482,9 @@
     <rdfs:label>Lady</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#PersonObjectComplements"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#PeriodExpressions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#MomentExpressions"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#QuantitySix">
     <rdfs:label>Six</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -4081,6 +4107,9 @@
     <rdfs:label>High storm</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#OpinionAdjectives"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#MonthExpressions">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#MomentExpressions"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Casual">
     <rdfs:label>Casual</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#QualityAdjectives"/>
@@ -4127,6 +4156,9 @@
     <catcherRye:hasRelativeLocationDirection>at</catcherRye:hasRelativeLocationDirection>
     <rdfs:label>At me</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#RelativeLocationExpressions"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#DirectObject">
+    <rdfs:subClassOf rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Turn">
     <catcherRye:hasMovementType>turn</catcherRye:hasMovementType>
@@ -4567,7 +4599,6 @@
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#ThingObjectComplements"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#TookOut">
-    <catcherRye:hasDirectObject>out</catcherRye:hasDirectObject>
     <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#OutObject"/>
     <catcherRye:hasActionType>take</catcherRye:hasActionType>
     <rdfs:label>Took out</rdfs:label>
@@ -5382,11 +5413,10 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#TakeOut">
     <catcherRye:hasDirectObject rdf:resource="https://catcherRye.github.io/catcherRye.owl#OutObject"/>
-    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
-    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
-    <catcherRye:hasDirectObject>out</catcherRye:hasDirectObject>
     <catcherRye:hasActionType>take</catcherRye:hasActionType>
     <rdfs:label>Take out</rdfs:label>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TakeVerbs"/>
+    <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#BringVerbs"/>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#TransitiveMovementVerbs"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#Hungry">
@@ -5489,9 +5519,8 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#feet">
     <catcherRye:hasPhysicalStateSeverity rdf:resource="https://catcherRye.github.io/catcherRye.owl#MildSeverity"/>
-    <rdfs:label>feet</rdfs:label>
-    <catcherRye:hasPhysicalStateSeverity>Mild</catcherRye:hasPhysicalStateSeverity>
     <catcherRye:hasPhysicalStateType rdf:resource="https://catcherRye.github.io/catcherRye.owl#Discomfort"/>
+    <rdfs:label>feet</rdfs:label>
     <rdf:type rdf:resource="https://catcherRye.github.io/catcherRye.owl#NegativePhysicalStates"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://catcherRye.github.io/catcherRye.owl#InPeoplesCars">
