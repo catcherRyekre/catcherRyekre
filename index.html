@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My WebVOWL Graph</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="webvowl/css/webvowl.css">
+</head>
+<body>
+	<div id="webvowl" class="vowl-container"></div>
+	<script src="webvowl/js/d3.min.js"></script>
+	<script src="webvowl/js/webvowl.js"></script>
+	<script>
+		var graphData = {
+			"@context": "http://visualdataweb.de/context/WebVOWLVisualization.jsonld",
+			"@graph": []
+		};
+		
+		d3.json("https://raw.githubusercontent.com/catcherRyekre/catcherRyekre/main/onthologyfkre.json", function(error, data) {
+			if (error) {
+				console.log(error);
+			} else {
+				graphData["@graph"] = data["@graph"];
+				var container = d3.select("#webvowl");
+				var options = {
+					"mode": "compact",
+					"compactNotation": false
+				};
+				var graph = WebVOWL.createWebVOWL(container, options);
+				graph.loadJSONData(graphData);
+			}
+		});
+	</script>
+</body>
+</html>
